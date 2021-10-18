@@ -1,0 +1,1393 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --light-grey: #f8f6f6;
+    --font-grey: #6c6d6e;
+    --secondary-font-grey: #a5abb4;
+    --color-grey: #3A3B3C;
+    --white: white;
+    --black: black;
+    --theme-pink: #EB3C62;
+    --theme-pink-rbga: rgba(235,60,98,.75);
+    --new-blue: #2a9df4;
+    --hamburger-menu-speed: 0.75s;
+}
+
+body {
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+}    
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1500px;
+    margin: auto;
+}
+
+.btn {
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.6250em 1.2500em;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 500px;
+}
+
+/* Hamburger Menu - Displayed on Mobiles ONLY */
+.hamburger-menu-wrap{
+    display: none;
+}
+
+/* Navbar */
+.nav-contents {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
+}
+
+.nav-contents h3 {
+    color: var(--theme-pink);
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.nav-contents nav ul {
+    display: flex;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: .7rem;
+}
+
+.nav-contents nav li {
+    margin: 0 .5rem;
+}
+
+.nav-contents nav a {
+    color: black;
+    
+}
+
+.nav-contents nav a:hover {
+    border-bottom: 1px solid var(--black);
+    margin-bottom: -1px;
+}
+
+.nav-content {
+    display: flex;
+}
+
+.nav-content > div {
+    margin-right: 1rem;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    font-size: .7rem;
+}
+
+.nav-right i {
+    color: var(--theme-pink);
+    margin-right: .3rem;
+}
+
+/* Main */
+.main {
+    width: 100%;
+    height: 600px;
+    position: relative;
+    border-radius: .1rem;
+    z-index: 1;
+    width: 100vw;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+.slide-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    transition: all 2s ease-out;
+}
+
+.slide-container:nth-child(2){
+background: 
+    url("./images/main2.jpg") center/cover no-repeat
+}
+.slide-container:nth-child(3){
+background: 
+    url("./images/main3.jpg") center/cover no-repeat;
+    background-position: top;
+}
+.slide-container:nth-child(1){
+    background: url('./images/main1.jpg') no-repeat center;
+    background-size: 100% 100%;
+    
+}
+
+.main-contents {
+    position: absolute;
+    top: 9rem;
+    right: 5rem;
+    text-transform: uppercase;
+}
+
+.main-contents p {
+    font-weight: 600;
+    font-size: .9rem;
+}
+
+.main-contents h1 {
+    margin: .4rem 0;
+    font-size: 2rem;
+}
+
+.main-contents a {
+    color: var(--black);
+    border: 1px solid var(--black);
+    background: transparent;
+}
+
+.main-contents a:hover {
+    color: var(--white);
+    background-color: var(--black);
+}
+
+/* Main 2 */
+.main-2 .container {
+    width: 100%;
+    margin: 0;
+}
+
+.main-2-contents {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* background: rgba(0, 0, 0, 0.1); */
+    box-sizing: border-box;
+}
+
+.main-2-contents img {
+    height: 15rem;
+    width: 100%;
+    transition: all .5s ease-out;
+    /* margin-top: 5px; */
+    cursor: pointer;
+}
+
+
+.main-2-contents img:hover{
+    transform: scale(0.95);
+}
+
+.main-2-content {
+    position: relative;
+}
+
+.main-2-info {
+    color: white;
+    position: absolute;
+    top: 48%;
+    left: 2rem;
+    text-transform: uppercase;
+    z-index: 999;
+}
+
+.main-2-info p {
+    font-size: .7rem;
+}
+
+.main-2-info h3 {
+    margin: .5rem 0;
+}
+
+.main-2-info.black {
+    color: var(--black);
+}
+
+.main-2-info.black a {
+    color: black;
+    border: 1px solid var(--black);
+}
+
+.main-2-info.black a:hover {
+    color: white;
+    background-color: black;
+}
+
+.main-2-info a {
+    border: 1px solid var(--white);
+    color: white;
+    position: absolute;
+    font-size: .9rem;
+    font-weight: 500;
+    padding: 0.3250em .9em;
+}
+
+.main-2-info a:hover {
+    color: black;
+    background-color: var(--white);
+}
+
+
+
+/* Fresh Offers */
+.fresh-offers {
+    margin: 4rem 6rem;
+}
+
+.fresh-offers-title {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    transition: all 0.5s ease-out ;
+    cursor: pointer;
+}
+
+.fresh-offers-left h4,
+.deal-of-week h4,
+.blog h4,
+.subscribe h4 {
+    font-weight: 400;
+    color: var(--theme-pink);
+    text-transform: uppercase;
+    
+}
+
+.fresh-offers-left h3 {
+    font-size: 1.7rem;
+    margin-bottom: -.5rem;
+}
+
+.fresh-offers-right {
+    display: flex;
+    text-transform: uppercase;
+    font-size: .8rem;
+    font-weight: 500;
+}
+
+.linebreak {
+    border-left: .3px solid var(--black);
+    margin: 4px 1rem;
+}
+
+.fresh-offers-right p:hover {
+    border-bottom: 1px solid var(--black);
+    margin-bottom: -1px;
+}
+
+.fresh-offers-info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem 1rem;
+}
+
+.fresh-offers-content {
+    position: relative;
+}
+
+.fresh-offers-content img {
+    height: 17rem;
+    width: 100%;
+    border-radius: 2px;
+    transition: all 0.3s ease-out ;
+    cursor: pointer;
+}
+
+.fresh-offers-content p {
+    text-align: center;
+    font-size: .9rem;
+    font-weight: 500;
+    margin-top: .5rem;
+}
+
+.fresh-offers-content p span {
+    text-decoration: line-through;
+    color: var(--secondary-font-grey);
+    font-weight: 500;
+    margin-right: .3rem;
+}
+
+.new-item p,
+.sale-item p {
+    font-size: .5rem;
+    padding: .6rem;
+    border-radius: 50%;
+    font-size: .7rem;
+    color: var(--white);
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    top: .5rem;
+    left: .7rem;
+}
+
+.new-item p {
+    background: var(--new-blue);
+}
+
+.sale-item p {
+    background-color: var(--theme-pink);
+}
+
+.fresh-offers-icons {
+    transform: scale(0);
+}
+
+.fresh-offers-content img:hover {
+    opacity: 0.4;
+    transform: scale(1.04);
+}
+
+.fresh-offers-content img:hover ~ .fresh-offers-icons {
+    transform: scale(1);
+}
+
+.fresh-offers-icons:hover {
+    transform: scale(1);
+}
+
+.fresh-offers-icons i:hover {
+    transform: scale(1.2);
+}
+
+.fresh-offers-icons {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom: 6rem;
+    text-align: center;
+      transition: all 0.3s ease-out ;
+;
+}
+/*
+
+ .show-icons {
+    z-index: 10;
+}
+
+ .overlay {
+} */
+
+.fresh-offers-icons i {
+    padding: .4rem;
+    border-radius: 50%;
+    font-size: 1rem;
+    color: var(--black);
+    margin: 0 .3rem;
+  
+}
+
+.fresh-offers-icons i:first-child,
+.fresh-offers-icons i:last-child {
+    background-color: var(--white);
+    border: 1px solid var(--black);
+}
+
+.fresh-offers-icons i:nth-child(2) {
+    color: var(--white);
+    background-color: var(--theme-pink);
+    border: 1px solid var(--theme-pink);
+}
+
+/* Deal of Week */
+.deal-of-week {
+    background-color: var(--light-grey);
+    padding: 4rem 6rem;
+}
+
+.deal-of-week-contents {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    column-gap: 2rem;
+}
+
+
+.deal-of-week-left {
+    max-width: 27rem;
+}
+
+.deal-of-week-left h3,
+.blog h3 {
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+}
+
+.deal-of-week-left p:first-of-type {
+    font-size: .8rem;
+} 
+/* style here */
+.deals-of-week-countdown {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0 2rem 0 ;
+}
+/* style here */
+.counter-item p span{
+    display: block;
+    text-transform: capitalize;
+}
+.counter-item {
+    background-color: var(--white);
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    text-align: center;
+    font-size: .9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 .5rem;
+}
+
+.sales{
+    font-size: 1rem;
+    text-transform: capitalize;
+    color: var(--color-grey);
+}
+
+.deal-of-week-left a {
+    background-color: var(--theme-pink);
+    border: 1px solid var(--theme-pink);
+    color: var(--white);
+    margin-top: 1rem;
+}
+.deal-of-week-left .btn:hover{
+    opacity: 0.6;
+}
+
+.deal-of-week-right {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    grid-template-areas: 
+        "picture-main picture-main picture-main"
+        "picture-1 picture-2 picture-3"; 
+        cursor: pointer;  
+        transition: all 1s ease-in-out;    
+}
+
+.deal-of-week-right:hover{
+    animation: bounce 3s 1s 1;
+}
+@keyframes bounce{
+    0%{
+        transform: scale(1);
+        transition: all 5s ease-in;
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+        transition: all 5s ease-out;
+    }
+}
+.deal-of-week-main {
+    grid-area: picture-main;
+}
+
+img.deal-of-week-main {
+    height: 20rem;
+    width: 100%;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+img.deal-of-week-pic1,
+img.deal-of-week-pic2,
+img.deal-of-week-pic3 {
+    height: 10rem;
+    width: 100%;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.deal-of-week-pic1 {
+    grid-area: picture-1;
+}
+
+.deal-of-week-pic2 {
+    grid-area: picture-2; 
+}
+
+.deal-of-week-pic3 {
+    grid-area: picture-3;
+}
+
+/* Blog */
+.blog {
+    margin: 4rem 6rem;
+    text-align: center;
+}
+.blog-contents {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem; 
+}
+
+.blog-contents-info img {
+    height: 17rem;
+    width: 100%;
+    transition: all  .3s ease-in ;
+}
+.blog-contents-info img:hover{
+    transform: scale(0.95);
+}
+
+.btn .fas{
+    transition: all .4s ease-in;
+}
+.btn:hover .fas{
+    transform: scaleX(1.3);
+    padding-right: 5px;
+}
+
+.blog-contents-info-icons {
+    display: flex;
+    align-items: center;
+    color: var(--font-grey);
+    font-size: .8rem;
+    text-transform: uppercase;
+    margin: .5rem 0;
+}
+
+.blog-contents-info-icons p {
+    margin-right: 1.2rem;
+}
+
+.blog-contents-info-icons i {
+    margin-right: .2rem;
+}
+
+.blog-contents-info h5 {
+    font-size: 1rem;
+    line-height: 1.2;
+    text-align: left;
+}
+
+/* Subscribe */
+.subscribe {
+    margin: 2rem 6rem -4rem 6rem;
+    position: relative;
+    z-index: 1;
+}
+
+.subscribe-contents {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: end;
+    padding: 2rem;
+    box-shadow: 0 0 7px var(--secondary-font-grey);
+    background-color: var(--white);
+}
+
+.subscribe-contents h3 {
+    font-size: 1.7rem;
+    margin: 0 4rem -.4rem 0;
+}
+
+.form-control {
+    display: flex;
+}
+
+.form-item {
+    width: 100%;
+}
+
+.subscribe-form input[type='email'] {
+    width: 100%;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 0px;
+    box-sizing: border-box;
+    padding: 0.7330em 0.7500em;
+}
+
+.subscribe-form input[type='submit'] {
+    padding: 0.7330em 2.7500em;
+    font-size: .8rem;
+    border: 1.4px solid var(--theme-pink);
+    background-color: var(--theme-pink);
+    color: var(--white); 
+    text-transform: uppercase;
+    width: 100%;
+    border-radius: 0px;
+    box-sizing: border-box;
+    
+}
+
+.subscribe-form input::placeholder  {
+    font-size: 1rem;
+    font-family: sans-serif;
+    font-weight: lighter;
+    color: lightgrey;
+}
+
+/* Company Information */
+.company-info {
+    background-color: var(--black);
+    color: white;
+    padding: 8rem 6rem 1rem 6rem;
+}
+
+.company-info-contents {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.company-info-contents-item h5 {
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.company-info-contents-item p {
+    padding: .8rem 0;
+    font-size: .9rem;
+}
+
+.address p:nth-child(2),
+.address p:last-child {
+    margin-left: 1.9rem;
+    margin-top: -2rem;
+}
+ 
+.company-info-contents-item  p i {
+    margin-right: .8rem;
+}
+
+.company-info-contents-item a {
+    display: block;
+    padding: .5rem 0;
+    color: var(--white);
+    font-size: .9rem;
+}
+
+.company-info-contents-item a:hover {
+    border-bottom: .5px solid var(--white);
+    display: inline-block;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--black);
+    color: var(--white);
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.footer p {
+    font-size: .8rem;
+    margin-bottom: .3rem;
+}
+
+.footer p span {
+    color:var(--theme-pink);
+    font-size: 1rem;
+    
+}
+
+@media screen and (max-width: 1100px) {
+    .fresh-offers,
+    .blog {
+        margin: 3rem 0;
+    }
+
+    .main {
+        height: 500px;
+    }
+
+    .main-contents {
+        top: 8rem;
+        right: 3rem;
+    }  
+    
+    .main-contents h1 {
+        font-size: 1.5rem;
+    }
+
+    .deal-of-week {
+        padding: 4rem 0rem;
+    }
+
+    .blog-contents-info img {
+        height: 14rem;
+        width: 100%;
+    }
+
+    .subscribe {
+        margin: 4rem 0 -4rem 0;
+    }
+
+    .subscribe h4 {
+        font-size: 1rem;
+    }
+
+    .subscribe-contents h3 {
+        font-size: 1.4rem;
+        line-height: 1.2;
+    }
+
+    .subscribe-form input[type='email'],
+    .subscribe-form input[type='submit']  {
+        font-size: .75rem;
+        display: block;
+    }
+
+    .subscribe-form input::placeholder  {
+        font-size: .9rem;
+    }
+
+    .company-info {
+        padding: 8rem 0 1rem 0;
+    }
+
+    .company-info-contents-item p,
+    .company-info-contents-item a {
+        font-size: .8rem;
+    }
+
+    .footer p {
+        font-size: .7rem;
+        margin-bottom: .3rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .subscribe-contents {
+        align-items: center;
+        justify-content: center;
+    }
+    .form-control {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        width: 60%;
+        margin: auto;
+    }
+
+}
+
+@media screen and (max-width: 960px) {
+    .nav .container {
+        width: 100%;
+    }
+
+    .nav-contents nav ul li {
+        margin: 0 .3rem;
+    }
+    
+    .main-contents {
+        top: 8rem;
+        right: 2rem;
+    }  
+    
+    .main-contents h1 {
+        font-size: 1.3rem;
+    }
+
+    .subscribe-contents {
+        padding: 1.5rem 2rem;
+        grid-template-columns: 1.3fr .9fr;
+    }
+
+    .subscribe-contents h3 {
+        font-size: 1.3rem;
+    }
+
+    .form-control {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .main-2-info h3 {
+        font-size: 1.1rem;
+    }
+
+    .main-2-contents img {
+        height: 13rem;
+    }
+
+    .fresh-offers-content img {
+        height: 14.5rem;
+    }
+
+    img.deal-of-week-main {
+        height: 17rem;
+    }
+    
+    img.deal-of-week-pic1, 
+    img.deal-of-week-pic2, 
+    img.deal-of-week-pic3 {
+        height: 9rem;
+        width: 100%;
+        box-shadow: 0 3px 5px rgb(0 0 0 / 10%);
+    }
+    
+    .blog-contents-info img {
+        height: 12rem;
+        width: 100%;
+    }
+
+    .blog-contents-info-icons {
+        font-size: .65rem;
+    }
+
+    .blog-contents-info h5 {
+        font-size: .9rem;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .nav-contents nav {
+        display: none;
+    }
+
+    .nav-content {
+        margin-right: 2rem;
+    }
+
+    /* Hamburger Menu - Mobiles ONLY */
+    .hamburger-menu-wrap {
+        display: block;
+        position: relative;
+        top: -1rem;
+        right: 0;
+        z-index: 10;
+    }
+
+    .hamburger-menu-wrap .toggler {
+        position: absolute;
+        top: .65rem;
+        right: 0;
+        z-index: 20;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        opacity: 0;
+    }
+
+    /* this is the square the hamburger lines will be inside of */
+    .hamburger-menu-wrap .hamburger {
+        position: absolute;
+        top: .65rem;
+        right: 0;
+        z-index: 10;
+        width: 60px;
+        height: 60px;
+        padding: 1rem;
+        background: transparent;
+        display: flex;
+        place-items: center center;
+    }
+
+    /* Hamburger Lines - this is the middle line */
+    .hamburger-menu-wrap .hamburger > div {
+        position: relative;
+        width: 100%;
+        height: 2px;
+        background-color: var(--black);
+        display: flex;
+        place-items: center center;
+        transition: all 0.4s ease;
+    }
+
+    /* Hamburger Lines - this is the top & bottom lines */
+    .hamburger-menu-wrap .hamburger > div::before,
+    .hamburger-menu-wrap .hamburger > div::after {
+        content: '';
+        position: absolute;
+        z-index: 10;
+        top: -10px; /* this puts both lines on the top */
+        width: 100%;
+        height: 2px;
+        background-color: inherit;
+    }
+
+    .hamburger-menu-wrap .hamburger > div::after {
+        top: 10px; /* this moves the bottom line under the middle line */
+    }
+
+    /* Togger Animation - when the hamburger menu is clicked on */
+    .hamburger-menu-wrap .toggler:checked + .hamburger > div {
+        transform: rotate(135deg);
+        background-color: var(--white);
+    }
+
+    /* Show Menu when hamburger menu is clicked */
+    .hamburger-menu-wrap .toggler:checked ~ .hamburger-menu {
+        visibility: visible;
+    }
+
+    /* Show Menu (not links) when hamburger menu is clicked by setting scale to 1 */
+    .hamburger-menu-wrap .toggler:checked ~ .hamburger-menu > div {
+        transform: scale(1);
+        transition-duration: var(--hamburger-menu-speed);
+    }
+
+    /* Shows menu & links when hamburger menu is clicked */
+    .hamburger-menu-wrap .toggler:checked ~ .hamburger-menu > div > div {
+        opacity: 1;
+        transition: opacity 0.4s ease;
+    }
+
+    /* Turns hamburger lines into x (targets the before and after lines) */
+    .hamburger-menu-wrap .toggler:checked + .hamburger > div::before,
+    .hamburger-menu-wrap .toggler:checked + .hamburger > div::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+    /* Rotates X on hover state when in checked state */
+    .hamburger-menu-wrap .toggler:checked:hover + .hamburger > div {
+        transform: rotate(225deg);
+    }
+
+    /* Style for the menu itself */
+    .hamburger-menu-wrap .hamburger-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        visibility: hidden;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Style for the menu items background */
+    .hamburger-menu-wrap .hamburger-menu > div {
+        background-color: var(--theme-pink-rbga);
+        border-radius: 50%; /* this creates the background circle effect */
+        /* width & height set to 200vw & vh because want it to go outside the screen */
+        width: 200vw;
+        height: 200vh;
+        display: flex;
+        flex: none;
+        justify-content: center;
+        align-items: center;
+        transform: scale(0); /* creates the shootout effect */
+        transition: all 0.4s ease;
+    }
+
+    /* Style for the menu */
+    .hamburger-menu-wrap .hamburger-menu > div > div {
+        text-align: center;
+        max-width: 90vw;
+        max-height: 100vh;
+        opacity: 0; 
+        transition: opacity 0.4s ease;
+    }
+
+    .hamburger-menu-wrap .hamburger-menu > div > div > ul > li {
+        padding: .4rem;
+    }
+
+    /* Style for the menu items */
+    .hamburger-menu-wrap .hamburger-menu > div > div > ul > li > a {
+        color: var(--white);
+        font-weight: 600;
+        transition: color 0.4s ease;
+    }
+
+    .hamburger-menu-wrap .hamburger-menu > div > div > ul > li > a:hover {
+        border-bottom: 2px solid var(--white);
+        margin-bottom: -2px;
+    }
+    
+    .main-contents {
+        top: 8rem;
+        right: 1rem;
+    }  
+    
+    .main-contents h1 {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .main-2-info {
+        top: 53%;
+        left: 1rem;
+    }
+
+    .main-2-info h3 {
+        margin: .2rem 0 .3rem 0;
+        font-size: 1rem;
+    }
+
+    .main-2-info a {
+        font-size: .7rem;
+    }
+
+    .fresh-offers {
+        margin: 1.5rem 3rem;
+    }
+
+    .fresh-offers-title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .fresh-offers-left h3 {
+        font-size: 1.7rem;
+        margin-bottom: 0;
+    }
+
+    .fresh-offers-info {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem 3rem;
+    }
+
+    .fresh-offers-content p {
+        margin-top: 0;
+    }
+
+    .deal-of-week-contents {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 1rem 0;
+        text-align: center;
+    }
+
+    .deal-of-week-contents .container {
+        width: 100%;
+    }
+
+    .blog-contents-info img {
+        height: 10rem;
+        width: 100%;
+    }
+
+    .blog-contents-info-icons {
+        font-size: .5rem;
+    }
+
+    .blog-contents-info h5 {
+        font-size: .7rem;
+    }
+
+    .subscribe-contents {
+        grid-template-columns: 1.5fr .8fr;
+    }
+
+    .company-info .container {
+        margin: 0;
+        width: 100%;
+    }
+
+    .company-info-contents {
+        grid-template-columns: repeat(2, 1fr);
+        gap: .5rem;
+        text-align: center;
+    }
+
+    .company-info-contents-item h5 {
+        margin-bottom: .8rem;
+        font-size: .8rem;
+    }
+
+    .company-info-contents-item p,
+    .company-info-contents-item a {
+        font-size: .7rem;
+    }
+
+    .company-info-contents-item a {
+        padding: .4rem 0;
+    }
+
+    .company-info-contents-item p {
+        padding: .6rem 0;
+    }
+
+    .address p:nth-child(2),
+    .address p:last-child {
+        margin-left: 1.9rem;
+        margin-top: -1.2rem;
+    }
+
+    .footer p {
+        font-size: .6rem;
+        margin-bottom: .3rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .main {
+        background: url(./images/main3.jpg) no-repeat center;
+        width: 100%;
+        height: 400px;
+        position: relative;
+        background-size: 100% 100%;
+        border-radius: .1rem;
+        z-index: 1;
+    }
+
+    .main-contents {
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        top: 13rem;
+        text-align: center;
+    }
+
+    .main-contents a {
+        background: var(--white);
+    }
+
+    .main-2-contents img {
+        height: 10rem;
+    }
+
+    .main-2-info {
+        top: 55%;
+        left: 1rem;
+    }
+
+    .main-2-info p {
+        font-size: .4rem;
+    }
+
+    .main-2-info h3 {
+        margin: .2rem 0 .3rem 0;
+        font-size: .7rem;
+    }
+
+    .main-2-info a {
+        font-size: .4rem;
+    }
+
+    .main-2-info.black a {
+        background: var(--white);
+    }
+
+    .fresh-offers-left h4, 
+    .deal-of-week h4, 
+    .blog h4, 
+    .subscribe h4 {
+        font-size: .7rem;
+    }
+
+    .fresh-offers-left h3,
+    .deal-of-week-left h3,
+    .blog h3 {
+        font-size: 1.2rem;
+    }
+
+    .fresh-offers-right {
+        font-size: .5rem;
+    }
+
+    .linebreak {
+        border-left: .3px solid var(--black);
+        margin: 4px .3rem;
+    }
+
+    .fresh-offers-content img {
+        height: 13rem;
+    }
+
+    .fresh-offers-content p {
+        font-size: .7rem;
+        margin-top: 0;
+    }
+
+    .new-item p, 
+    .sale-item p {
+        font-size: .5rem;
+        padding: .5rem;
+    }
+
+    .fresh-offers-icons {
+        bottom: 4rem;
+    }
+
+    .deal-of-week-left h3 {
+        margin-bottom: 0;
+    }
+
+    .deal-of-week-left p:first-of-type,
+    .deal-of-week-left p {
+        font-size: .7rem;
+    }
+
+    .deals-of-week-countdown {
+        margin: 1rem 0 1.5rem 0;
+    }
+
+    .counter-item {
+        height: 5em;
+        width: 5em;
+    }
+
+    .deal-of-week-left a {
+        font-size: .8rem;
+    }
+
+    .blog-contents {
+        grid-template-columns: 1fr;
+        margin: 0 1rem;
+    }
+
+    .blog-contents-info img {
+        height: 12rem;
+        width: 100%;
+    }
+
+    .blog-contents-info h5 {
+        text-align: center;
+    }
+
+    .blog-contents-info-icons {
+        justify-content: center;
+    }
+
+    .subscribe-contents h3 {
+        font-size: 1rem;
+        margin: 0 2rem -.4rem 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .main-2-contents img {
+        height: 7rem;
+    }
+
+    .main-2-info {
+        top: 51%;
+        left: 1rem;
+    }
+
+    .main-2-info p {
+        font-size: .4rem;
+    }
+
+    .main-2-info h3 {
+        margin: .1rem 0;
+        font-size: .6rem;
+    }
+
+    .fresh-offers-left h3,
+    .deal-of-week-left h3,
+    .blog h3 {
+        font-size: 1.2rem;
+    }
+
+    .fresh-offers-right {
+        font-size: .3rem;
+    }
+
+    .new-item p, 
+    .sale-item p {
+        font-size: .5rem;
+        padding: .5rem;
+        left: .4rem;
+    }
+
+    .fresh-offers-icons i {
+        padding: .3rem;
+        font-size: .7rem;
+        margin: 0 .1rem;
+    }
+
+    .fresh-offers-content img {
+        height: 12rem;
+    }
+
+    .fresh-offers-info {
+        gap: .5rem .5rem;
+    }
+    
+    .deal-of-week {
+        padding: 2rem 0rem;
+    }
+    
+    .deal-of-week-left h3 {
+        margin-bottom: 0;
+    }
+
+    .counter-item {
+        font-size: .7rem;
+    }
+    
+    .deal-of-week-left p:first-of-type,
+    .deal-of-week-left p {
+        font-size: .7rem;
+    }
+    
+    .deals-of-week-countdown {
+        margin: 1rem 0 1.5rem 0;
+    }
+    
+    .deal-of-week-left a {
+        font-size: .8rem;
+    }
+    
+    .blog-contents {
+        grid-template-columns: 1fr;
+      
+    }
+    
+    .blog-contents-info img {
+        height: 12rem;
+        width: 100%;
+    }
+    
+}
+
+@media screen and (max-width: 320px) {
+    .main-2-info {
+        top: 51%;
+        left: .5rem;
+    }
+
+    .main-2-info h3 {
+        font-size: .5rem;
+    }
+
+    .company-info-contents-item p {
+        padding: .5rem 0;
+    }
+
+    .company-info-contents-item a {
+        padding: .3rem 0;
+    }
+
+}
+
+
+
